@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="0015e0a4-88a8-4c35-9dba-cdec087e8de7" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="hr-bulk-employee-importFlow" doc:id="c287669f-9b42-450d-9e80-bf8e2a3b363b" >
+		<http:listener doc:name="Listener" doc:id="97043ab5-e0f5-46b8-a742-79c0519ffe8f" config-ref="HTTP_Listener_config" path="/bulk-import"/>
+	</flow>
+</mule>
